@@ -152,14 +152,13 @@ Now let's do something more complicated with non-interactive usage using some GN
 mega-put /path/to/my/temporary_resource /exportedstuff/
 mega-export -a  /exportedstuff/temporary_resource --expire=10M | awk '{print $4}'
 ```
-
 * Or imagine we'd like to public the enterprise promotional videos of May 2015 that we have previously stored in MEGA:
 ```
 for i in $(mega-find /enterprise/video/promotional2015/may --pattern="*mpeg"); do 
 mega-export -a $i | awk '{print $4}'; 
 done
 ```
-
+**Note**: autocomplition usually will add forward-slash to your foler, make sure to remove the trailing slash, otherwise you'll most likely to see the `Failed to upload: Invalid argument` output.
 # Platforms
 
 ## Linux
